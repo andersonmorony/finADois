@@ -1,9 +1,41 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab Two
+    <ion-title style="text-align: center">
+    <ion-icon name="calendar"></ion-icon> {{nomeMes}}
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <span>Total Despesas Fixas:</span><h4>R$ {{valorTotalFixo}}</h4>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-chip color="success">
+        <ion-label color="success">Paga: R$ {{valorPagoFixo}}</ion-label>
+      </ion-chip>
+      <ion-chip color="danger">
+        <ion-label color="danger">Não paga: R$ {{valorNPagoFixo}}</ion-label>
+      </ion-chip>
+      <br>
+      <br>
+      <ion-button expand="full" (click)="goDetalheFixo()" color="primary">Ver mais</ion-button>
+    </ion-card-content>
+  </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <span>Total Despesas Inesperadas:</span>
+        <h4>R$ {{valorTotalInesperado}}</h4>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-chip color="success">
+          <ion-label color="success">Paga: R$ {{valorPagoInesperado}}</ion-label>
+        </ion-chip>
+        <ion-chip color="danger">
+          <ion-label color="danger">Não paga: R$ {{valorNPagoInesperado}}</ion-label>
+        </ion-chip>       
+        <ion-button expand="full" (click)="goDetalheInesperado()" color="primary">Ver mais</ion-button>
+      </ion-card-content>
+    </ion-card>
+</ion-content>

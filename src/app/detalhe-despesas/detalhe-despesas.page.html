@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalhe</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Lista Despesas Fixas -->
+  <ion-list lines="full" *ngIf="tipoDoc === 'Fixo'">
+    <ion-item *ngFor="let item of contasFixas" id="{{item.id}}" (click)="presentActionSheet($event)">
+      <ion-label id="{{item.id}}">
+        {{item.descricao}} - R$ {{item.preco}}
+      </ion-label>
+      <ion-badge id="{{item.id}}" [color]="item.pago ? 'success' : 'medium'">Pago</ion-badge>
+    </ion-item>
+  </ion-list>
+  <!--Lista Inesperadas -->
+  <ion-list lines="full" *ngIf="tipoDoc != 'Fixo'">
+    <ion-item *ngFor="let item of contasInesperadas" id="{{item.id}}" (click)="presentActionSheet($event)">
+      <ion-label id="{{item.id}}">
+       {{item.descricao}} - R$ {{item.preco}}
+      </ion-label>
+      <ion-badge id="{{item.id}}" [color]="item.pago ? 'success' : 'medium'">Pago</ion-badge>
+    </ion-item>
+  </ion-list>
+  <!-- bottom-->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="presentModal()">
+      <ion-icon name="add" ></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

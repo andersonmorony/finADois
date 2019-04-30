@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nova Despesa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+  <ion-label position="floating">Descrição</ion-label>
+    <ion-input type="text" [(ngModel)]="item.descricao"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label position="floating">Preço</ion-label>
+    <ion-input [(ngModel)]="item.preco" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+  <ion-label>Pago</ion-label> 
+    <ion-checkbox [(ngModel)]="item.pago" color="success"></ion-checkbox> 
+  </ion-item>
+  <br>
+  <br>
+  <ion-button  expand="full" (click)="edit ? edite() : cadastrar()" color="primary">Salvar</ion-button>
+  <ion-button  expand="full" (click)="fechar()" color="medium">Cancelar</ion-button>
+</ion-content>

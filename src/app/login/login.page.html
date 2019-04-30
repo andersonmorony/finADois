@@ -1,0 +1,25 @@
+<ion-content>
+<div class="content">
+  <div style="text-align: center">
+    <ion-img class="img" src="../../assets/logo.png"></ion-img>
+  </div>
+  <div class="logindiv">
+      <ion-list>
+        <ion-item>
+          <ion-label position='floating'>E-mail</ion-label>
+          <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position='floating'>Senha</ion-label>
+          <ion-input [(ngModel)]="user.senha" type="password"></ion-input>
+        </ion-item>
+      </ion-list>
+    
+      <ion-button expand="block" class="btn-login" (click)="login()">Login</ion-button>
+      <ion-button color="light" class="create" expand="block" (click)="createAccount()">Create Account</ion-button>
+
+  </div>
+</div>
+
+</ion-content>
